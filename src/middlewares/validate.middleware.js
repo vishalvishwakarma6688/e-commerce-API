@@ -1,4 +1,4 @@
-export default (schema) => async (req, resizeBy, next) => {
+export default (schema) => async (req, res, next) => {
     try {
         const value = await schema.validateAsync(req.body, {
             abortEarly: false,

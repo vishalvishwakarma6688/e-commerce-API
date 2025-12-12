@@ -19,11 +19,6 @@ const CartItem = CartItemModel(sequelize, DataTypes);
 const Order = OrderModel(sequelize, DataTypes);
 const OrderItem = OrderItemModel(sequelize, DataTypes);
 
-/* ============================
-   🔗 DEFINE ALL ASSOCIATIONS
-============================ */
-
-// USER → WALLET TRANSACTIONS
 User.hasMany(WalletTransaction, { foreignKey: "user_id", as: "wallet_transactions" });
 WalletTransaction.belongsTo(User, { foreignKey: "user_id", as: "user" });
 
@@ -50,10 +45,6 @@ OrderItem.belongsTo(Order, { foreignKey: "order_id", as: "order" });
 // PRODUCT → ORDER ITEMS
 Product.hasMany(OrderItem, { foreignKey: "product_id", as: "order_items" });
 OrderItem.belongsTo(Product, { foreignKey: "product_id", as: "product" });
-
-/* ============================
-   EXPORT
-============================ */
 
 export {
   sequelize,
