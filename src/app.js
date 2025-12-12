@@ -16,7 +16,7 @@ app.get("/", (req, res)=> {
     res.json({ok: true, message: "e-commerce-api"})
 })
 
-app.use("/api/auht", authRoutes)
+app.use("/api/auth", authRoutes)
 app.use("/api/cart", cartRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/payments", paymentRoutes)
