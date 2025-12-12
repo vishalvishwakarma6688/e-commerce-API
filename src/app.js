@@ -3,6 +3,9 @@ import morgan from "morgan"
 
 import authRoutes from "./routes/auth.route.js"
 import errorMiddleware from "./middlewares/error.middleware.js"
+import cartRoutes from "./routes/cart.route.js"
+import orderRoutes from "./routes/orders.route.js"
+import paymentRoutes from "./routes/payments.route.js"
 
 const app = express()
 
@@ -14,6 +17,9 @@ app.get("/", (req, res)=> {
 })
 
 app.use("/api/auht", authRoutes)
+app.use("/api/cart", cartRoutes)
+app.use("/api/orders", orderRoutes)
+app.use("/api/payments", paymentRoutes)
 
 app.use(errorMiddleware)
 
