@@ -9,7 +9,7 @@ export default (sequalize, DataTypes) => {
             type: DataTypes.STRING(200), allowNull: false
         },
         description: {
-            type: DataTypes.TEXT(256), allowNull: true
+            type: DataTypes.TEXT, allowNull: true
         },
         price: {
             type: DataTypes.DECIMAL(10, 2), allowNull: false,

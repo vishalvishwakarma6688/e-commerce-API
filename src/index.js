@@ -1,21 +1,24 @@
-import dotenv from "dotenv"
+import dotenv from "dotenv";
+dotenv.config();
 
-dotenv.config()
-import app from "./app.js"
+import { sequelize } from "./config/db.js";
+import app from "./app.js";
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
-(async ()=> {
-    try {
-        await sequelize.authenticate();
-        console.log("DB connection success")
+(async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("DB connection success");
 
-        await sequelize.sync({alter: true})
-        console.log("Model synced")
+    await sequelize.sync({ alter: true });
+    console.log("Model synced");
 
-        app.listen(PORT, ()=> console.log("Server is running on port", PORT))
-    } catch (error) {
-        console.log("failed to start ", error)   
-        process.exit(1)
-    }
+    app.listen(PORT, () =>
+      console.log(`Server is running on port ${PORT}`)
+    );
+  } catch (error) {
+    console.log("failed to start ", error);
+    process.exit(1);
+  }
 })();

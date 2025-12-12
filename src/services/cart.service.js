@@ -1,5 +1,5 @@
 import { Cart, CartItem, Product } from "../models/index.js"
-import { sequelize } from "../models/db.js"
+import { sequelize } from "../config/db.js"
 
 export const getOrCreateCartForUser = async (userId) => {
     let cart = await Cart.findOne({ where: { user_id: userId } })

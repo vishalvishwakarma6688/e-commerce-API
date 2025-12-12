@@ -1,6 +1,6 @@
 import { getCartWithItems, getOrCreateCartForUser, removeCartItem, updateCartItemQuantity } from "../services/cart.service.js";
 
-export const addToCartb = async (req, res, next) => {
+export const addToCart = async (req, res, next) => {
     try {
         const userId = req.userId
         const { product_id, quantity } = req.validated;
